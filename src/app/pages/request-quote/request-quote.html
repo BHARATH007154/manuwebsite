@@ -1,0 +1,65 @@
+<section class="quote-page">
+  <div class="quote-shell">
+    <div class="quote-copy">
+      <span class="section-tag">Request a Quote</span>
+      <h1>Tell us what you need, and we’ll respond with the right solution.</h1>
+      <p>
+        Share your requirements for precision manufacturing, custom machined parts, mould and die support,
+        or industrial machine solutions. Our team will review your request and get back to you promptly.
+      </p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <span class="info-label">Email</span>
+          <strong>nettechnology2023@gmail.com</strong>
+        </div>
+        <div class="info-card">
+          <span class="info-label">Phone</span>
+          <strong>+91 7305 29 8828</strong>
+        </div>
+      </div>
+    </div>
+
+    <form class="quote-form" (ngSubmit)="submitRequest()" #quoteForm="ngForm">
+      <div class="field-grid">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" [(ngModel)]="form.name" required />
+        </label>
+
+        <label>
+          <span>Company</span>
+          <input type="text" name="company" [(ngModel)]="form.company" />
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" [(ngModel)]="form.email" required />
+        </label>
+
+        <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" [(ngModel)]="form.phone" required />
+        </label>
+      </div>
+
+      <label>
+        <span>Requirement</span>
+        <input type="text" name="requirement" [(ngModel)]="form.requirement" placeholder="e.g. Automotive parts, mould, CNC machining..." />
+      </label>
+
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="5" [(ngModel)]="form.message" placeholder="Tell us more about your requirement..."></textarea>
+      </label>
+
+      <button type="submit" class="submit-btn" [disabled]="!quoteForm.form.valid">
+        Send Quote Request
+      </button>
+
+      <p class="success-note" *ngIf="submitted">
+        Your inquiry is ready to send via email. The mail app will open with your details filled in.
+      </p>
+    </form>
+  </div>
+</section>
